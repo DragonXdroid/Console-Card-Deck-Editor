@@ -55,7 +55,7 @@ public class ClassicCardClass implements CardClass {
 
     @Override
     public void setCardModel(String modelName) {
-        cardModel = new File("src\\JavaSmallProjects\\MagicCards\\DeckModels\\"+modelName+"\\"+this.name+".jpg");
+        cardModel = new File("src\\MagicCards\\DeckModels\\"+modelName+"\\"+this.name+".jpg");
     }
 
     @Override

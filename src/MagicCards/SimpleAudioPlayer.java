@@ -22,7 +22,7 @@ public class SimpleAudioPlayer implements AudioPlayer {
         fileName = name;
         this.status = true;
 
-        audioInputStream = AudioSystem.getAudioInputStream(new File("src\\JavaSmallProjects\\MagicCards\\Audio\\"+fileName+".wav").getAbsoluteFile());
+        audioInputStream = AudioSystem.getAudioInputStream(new File("src\\MagicCards\\Audio\\"+fileName+".wav").getAbsoluteFile());
         clip = AudioSystem.getClip();
         clip.open(audioInputStream);
     }
@@ -30,7 +30,7 @@ public class SimpleAudioPlayer implements AudioPlayer {
     @Override
     public void setFileName(String fileName) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
-        audioInputStream = AudioSystem.getAudioInputStream(new File("src\\JavaSmallProjects\\MagicCards\\Audio\\"+fileName+".wav").getAbsoluteFile());
+        audioInputStream = AudioSystem.getAudioInputStream(new File("src\\MagicCards\\Audio\\"+fileName+".wav").getAbsoluteFile());
         clip = AudioSystem.getClip();
         clip.open(audioInputStream);
 

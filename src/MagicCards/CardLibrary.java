@@ -67,7 +67,7 @@ public class CardLibrary {
             System.out.println("           |               |              ");
             System.out.println("\s");
             System.out.println("▶ Back ---- Head back to main menu");
-
+            System.out.println("\s");
             String command = capitalize(input.nextLine());
             if (command.equals("Toggleaudio")){
                 deck.toggleAudio();
@@ -88,6 +88,9 @@ public class CardLibrary {
             else if (command.equals("Back")){
                 deck.cueAudio("back");
                 x =+ 1;
+            } else {
+                deck.cueAudio("error");
+                System.out.println("That not a valid command");
             }
         }
     }
@@ -120,6 +123,7 @@ public class CardLibrary {
 
         int x = 0;
         while (x<1){
+            System.out.println("\s\s");
             System.out.println("Here are the commands for editing your deck:");
             System.out.println("▶ Remove➖ ---- This command will ask the card you want to remove");
             System.out.println("▶ Add➕ ---- This command will ask what type of card to add to your current deck");
@@ -244,6 +248,7 @@ public class CardLibrary {
         int x = 0;
 
         while (x < 1) {
+            System.out.println("\s\s");
             System.out.println("Do you want to change all the cards in your deck, or a specific card?");
             System.out.println("▶ Deck");
             System.out.println("▶ card");
@@ -261,14 +266,20 @@ public class CardLibrary {
 
             } else if (capitalize(command ).equals("Card")) {
                 String cardName = selectCard(deck);
-                String model = selectModel(deck);
-                if (model.equals("Back") || cardName.equals("BACK")) {
+
+                if (cardName.equals("BACK")) {
                     deck.cueAudio("back");
                     x++;
                 }
                 else {
-                    deck.setCard(cardName, model);
-                    x++;
+                    String model = selectModel(deck);
+                    if (model.equals("Back")){
+                        deck.cueAudio("back");
+                        x++;
+                    } else {
+                        deck.setCard(cardName, model);
+                        x++;
+                    }
                 }
             }
             else {
@@ -289,7 +300,7 @@ public class CardLibrary {
             System.out.println("▶ Back ---- Head back to main menu");
             System.out.println("\s");
             String model = capitalize(input.nextLine().replaceAll("\\s", ""));
-            System.out.println("\s");
+
             if (model.equals("Back")){
                 deck.cueAudio("back");
                 return model;
@@ -301,6 +312,7 @@ public class CardLibrary {
             catch (NotValidModelException e) {
                 deck.cueAudio("error");
                 System.out.println(e.getMessage());
+                System.out.println("try again");
             }
         }
         return null;
@@ -312,7 +324,7 @@ public class CardLibrary {
         int x = 0;
         while (x<1){
             System.out.println("\s\s");
-            System.out.println("What type of card would you like to add? Type the card's name like the  given examples below:");
+            System.out.println("What type of card would you like? Type the card's name like the  given examples below:");
             System.out.println("Example: 5C = 5♣ || qs == Q♠");
             System.out.println("\s");
             System.out.println("▶ Back ---- Head back to main menu");
@@ -336,7 +348,7 @@ public class CardLibrary {
     }
 
     public static void displayModelsAvailable(){
-        File dir = new File("src\\JavaSmallProjects\\MagicCards\\DeckModels");
+        File dir = new File("src\\MagicCards\\DeckModels");
 
         System.out.println("\s");
         for (File deckModel:dir.listFiles()){
@@ -387,7 +399,7 @@ public class CardLibrary {
     }
 
     public static String modelChecker(String deckModel) throws NotValidModelException {
-        File deckModels  = new File("src\\JavaSmallProjects\\MagicCards\\DeckModels");
+        File deckModels  = new File("src\\MagicCards\\DeckModels");
         for (File model:deckModels.listFiles()){
             if (model.getName().equals(deckModel)){
                 return deckModel;
