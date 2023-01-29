@@ -9,18 +9,14 @@ public class SimpleAudioPlayer implements AudioPlayer {
 
     boolean status;
 
-
     AudioInputStream audioInputStream;
 
     private String fileName;
 
-    // constructor to initialize streams and clip
     public SimpleAudioPlayer() {
         this.status = true;
 
     }
-
-
 
     public SimpleAudioPlayer(String name) throws UnsupportedAudioFileException, IOException, LineUnavailableException{
         fileName = name;
@@ -33,13 +29,11 @@ public class SimpleAudioPlayer implements AudioPlayer {
 
     @Override
     public void setFileName(String fileName) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+
         audioInputStream = AudioSystem.getAudioInputStream(new File("src\\JavaSmallProjects\\MagicCards\\Audio\\"+fileName+".wav").getAbsoluteFile());
-
-        // create clip reference
         clip = AudioSystem.getClip();
-
-        // open audioInputStream to the clip
         clip.open(audioInputStream);
+
         this.fileName = fileName;
     }
 
@@ -57,7 +51,5 @@ public class SimpleAudioPlayer implements AudioPlayer {
         if (status){
             clip.start();
         }
-
     }
-
 }

@@ -1,4 +1,5 @@
 package MagicCards;
+
 import java.io.File;
 import java.util.Scanner;
 

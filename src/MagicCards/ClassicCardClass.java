@@ -25,7 +25,6 @@ public class ClassicCardClass implements CardClass {
 
     private void setValue() {
 
-
         Map<String, Integer> rankMap = new HashMap<>();
         rankMap.put("A",1);
         rankMap.put("2",2);
@@ -79,7 +78,8 @@ public class ClassicCardClass implements CardClass {
         try {
             desktop.open(this.cardModel);
 
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

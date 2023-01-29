@@ -18,6 +18,5 @@ public class BubbleSort {
                 return;
             }
         }
-
     }
 }

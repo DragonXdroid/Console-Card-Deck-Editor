@@ -1,6 +1,5 @@
 package MagicCards;
 
-
 import java.util.Scanner;
 
 public class CardMain {

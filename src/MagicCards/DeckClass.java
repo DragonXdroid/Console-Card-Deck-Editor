@@ -1,4 +1,5 @@
 package MagicCards;
+
 import java.util.Random;
 
 public class DeckClass {
@@ -65,7 +66,6 @@ public class DeckClass {
                 cards[i].setCardModel(deckModel);
             }
         }
-
         if (isEmpty()){
             cueAudio("error");
             System.out.println("They are no cards in your deck, try adding some.");
@@ -88,7 +88,8 @@ public class DeckClass {
         if (!isCard(name)){
             cueAudio("error");
             System.out.println("This card is not in your deck.");
-        } else {
+        }
+        else {
             cueAudio("success");
             System.out.println("Card model has been successfully set");
         }
@@ -170,7 +171,8 @@ public class DeckClass {
                 }
                 else if(iconFormat) {
                     System.out.print(CardLibrary.formatTextToEmoji(this.cards[count].getName()) + "  ");
-                } else {
+                }
+                else {
                     System.out.print(this.cards[count].getName() + "  ");
                 }
                 count++;
@@ -259,7 +261,8 @@ public class DeckClass {
     public void toggleAudio (){
         if (audio.getStatus()){
             audio.setStatus(false);
-        } else {
+        }
+        else {
             audio.setStatus(true);
         }
     }
@@ -267,7 +270,8 @@ public class DeckClass {
     public void toggleDuplicate (){
         if (duplicate){
             duplicate = (false);
-        } else {
+        }
+        else {
             duplicate = (true);
         }
     }
@@ -275,7 +279,8 @@ public class DeckClass {
     public void toggleIconFormat(){
         if (iconFormat){
             iconFormat = false;
-        } else {
+        }
+        else {
             iconFormat = true;
         }
     }
@@ -283,7 +288,8 @@ public class DeckClass {
     public void toggleAutoSort(){
         if (autoSort){
             autoSort = false;
-        } else {
+        }
+        else {
             autoSort = true;
         }
     }

@@ -6,8 +6,6 @@ public interface ClassicCardGettable {
 
     String getName();
 
-
     void getCardModel();
-
 
 }
