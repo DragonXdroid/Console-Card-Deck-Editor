@@ -1,4 +1,4 @@
-package JavaSmallProjects.MagicCards;
+package MagicCards;
 
 public interface CardClass extends ClassicCardGettable {
 

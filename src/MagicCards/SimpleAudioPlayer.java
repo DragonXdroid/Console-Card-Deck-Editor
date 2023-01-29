@@ -1,4 +1,4 @@
-package JavaSmallProjects.MagicCards;
+package MagicCards;
 
 import javax.sound.sampled.*;
 import java.io.File;

@@ -1,4 +1,4 @@
-package JavaSmallProjects.MagicCards;
+package MagicCards;
 
 import java.awt.*;
 import java.io.File;

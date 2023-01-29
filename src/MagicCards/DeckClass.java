@@ -1,4 +1,4 @@
-package JavaSmallProjects.MagicCards;
+package MagicCards;
 import java.util.Random;
 
 public class DeckClass {

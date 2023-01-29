@@ -1,4 +1,4 @@
-package JavaSmallProjects.MagicCards;
+package MagicCards;
 
 public class NotValidRankException extends Exception{
 
